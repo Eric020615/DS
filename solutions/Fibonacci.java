@@ -13,7 +13,6 @@ class Fibonacci{
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int[] memo = fibs(100000000);
-        System.out.println("hello");
         while(in.hasNextLine()){
             try{
                 int i = in.nextInt();
