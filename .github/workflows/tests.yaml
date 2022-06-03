@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: 1.8
       - name: Build with Maven
-        run: mvn clean package
+        run: javac solutions/Fibonacci.java
       - name: Test 1
         run: time bash tasks/fibonacci/run.sh
       - name: Test 2
