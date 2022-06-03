@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class navigation {
-    public class Edge  {
+    public static class Edge  {
     public int  u;
     public int  v;
 
@@ -13,7 +13,7 @@ public class navigation {
     }
     
 
-    public class UnweightedGraph<V> {
+    public static class UnweightedGraph<V> {
     List<V> vertices = new ArrayList<>();
     List<List<Edge>> neighbors = new ArrayList<>();
     ArrayList<ArrayList<Integer>> adjList;
