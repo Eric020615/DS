@@ -129,7 +129,7 @@ public class payment {
         long StartTime = new Date(). getTime(); //some tasks long lEndTime = new Date(). getTime(); long difference = lEndTime - lStartTime; System.
         LinkedList<String>queue = new LinkedList<>();
         ArrayList<Transaction>input = new ArrayList<>();
-        File dir = new File("C:\\Users\\USER\\IdeaProjects\\Batman-Team\\solutions\\payment\\cases");
+        File dir = new File("C:\\Users\\USER\\IdeaProjects\\DS\\solutions\\payment\\cases");
         File[]files=dir.listFiles();
 
         if (files[0].isFile()){
