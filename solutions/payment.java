@@ -1,3 +1,5 @@
+package solutions;
+import payment.*;
 import java.util.*;
 import java.io.*;
 public class payment {
