@@ -1,11 +1,135 @@
 import java.util.*;
 import java.io.*;
 public class payment {
+    public static class Transaction implements Comparable<Transaction> {
+        private long time;
+        private String id;
+        private String tier;
+
+        public Transaction(long time,String id,String tier){
+            this.time=time;
+            this.id=id;
+            this.tier=tier;
+        }
+
+        public long getTime() {
+            return time;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getTier() {
+            return tier;
+        }
+
+        public void setTime(long time) {
+            this.time = time;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public void setTier(String tier) {
+            this.tier = tier;
+        }
+
+        @Override
+        public String toString() {
+            return time+" "+id+" "+tier;
+        }
+
+        @Override
+        public int compareTo(Transaction o) {
+            if(this.getTime()>o.getTime())
+                return -1;
+            else if(this.getTime()<o.getTime())
+                return 1;
+            else
+                return 0;
+        }
+    }
+    
+    public static class MyQueue<E>  {
+        private java.util.LinkedList<E> list = new java.util.LinkedList<>();
+
+        public MyQueue(ArrayList e){
+            this.list=new LinkedList<E>(e);
+        }
+
+
+        public MyQueue(E[] e){
+            this.list=new LinkedList<E>(Arrays.asList(e));
+        }
+
+        public MyQueue(){
+            this.list=new LinkedList<E>();
+        }
+
+        public void enqueue(E e){
+            list.addLast(e);
+        }
+
+        public void enqueue(ArrayList e){
+            list.addLast((E) e);
+        }
+
+
+        public E dequeue(){
+            return list.removeFirst();
+        }
+
+        public E getElement(int i){
+            return list.get(i);
+        }
+
+        public E peek(){
+            return list.peek();
+        }
+
+        public int size(){
+            return list.size();
+        }
+
+        public E get(int i){
+            return list.get(i);
+        }
+
+        public boolean contains(E e){
+            return list.contains(e);
+        }
+
+        public boolean isEmpty(){
+            return list.isEmpty();
+        }
+
+        public E poll(){
+            E element = list.peek();
+            list.removeFirst();
+            return element;
+        }
+
+        public void set(int i, E element){
+            list.set(i, element);
+        }
+
+        public void clear(){
+            list.clear();
+        }
+        public void toPrintQueue(){
+            for(int i=0;i< list.size();i++) {
+                System.out.println((i+1)+" "+list.get(i));
+            }
+        }
+    }
+    
     public static void main(String[] args) throws IOException{
         long StartTime = new Date(). getTime(); //some tasks long lEndTime = new Date(). getTime(); long difference = lEndTime - lStartTime; System.
         LinkedList<String>queue = new LinkedList<>();
         ArrayList<Transaction>input = new ArrayList<>();
-        File dir = new File("C:\\Users\\USER\\IdeaProjects\\Batman-Team\\solutions\\payment\\cases_navigation");
+        File dir = new File("C:\\Users\\USER\\IdeaProjects\\Batman-Team\\solutions\\payment\\cases");
         File[]files=dir.listFiles();
 
         if (files[0].isFile()){
