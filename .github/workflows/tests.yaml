@@ -31,7 +31,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Compile solution
-        run: javac solutions/payment.java
+        run: javac solutions/Payment.java
       - name: Test 1
         run: time bash tasks/payment/run.sh
       - name: Test 2
@@ -46,7 +46,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Compile solution
-        run: javac solutions/navigation.java
+        run: javac solutions/Navigation.java
       - name: Test 1
         run: time bash tasks/navigation/run.sh
       - name: Test 2
