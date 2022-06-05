@@ -1,7 +1,7 @@
 package solutions;
 import java.util.*;
 import java.io.*;
-public class payment {
+public class Payment {
     public static class Transaction implements Comparable<Transaction> {
         private long time;
         private String id;
