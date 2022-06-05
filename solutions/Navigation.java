@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class navigation {
+public class Navigation {
     public static class Edge  {
     public int  u;
     public int  v;
