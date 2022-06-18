@@ -198,7 +198,7 @@ public class Navigation {
         HashMap<String,Integer> place = new HashMap<String , Integer>();
         UnweightedGraph<String> obj = new UnweightedGraph();
         ArrayList<String> destination = new ArrayList<>();
-        File dir = new File("C:\\Users\\USER\\IdeaProjects\\DS\\solutions\\cases_navigation");
+        File dir = new File("DS/solutions/cases_navigation");
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isFile()) {
