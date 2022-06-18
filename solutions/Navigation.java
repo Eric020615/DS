@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-import static navigation.IO.findShortestPath;
 
 public class Navigation {
     public static class Edge  {
