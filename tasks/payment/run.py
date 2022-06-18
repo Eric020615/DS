@@ -9,8 +9,8 @@ for case in sorted(test_cases):
         while True:
             line = f.readline()
             if line == "END\n":
-                #print("REBOOT")
-                #break
+                print("REBOOT")
+                break
                 quit()
             if line != "CLEAR\n":
                 print(line, end="")
