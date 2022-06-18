@@ -15,7 +15,7 @@ public class Navigation {
         UnweightedGraph<String> obj = new UnweightedGraph();
         ArrayList<String> destination = new ArrayList<>();
         Scanner scr = new Scanner(System.in);
-        File dir = new File("DS/Navigation/navigationdata");
+        File dir = new File("DS/Navigation/cases_navigation");
         File[] files = dir.listFiles();
         for (File file : files) {
             if (file.isFile()) {
