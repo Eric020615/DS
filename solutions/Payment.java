@@ -1,7 +1,5 @@
-package solutions;
 import java.util.*;
-class Payment {
-    
+public class Payment {
     public static class Transaction implements Comparable<Transaction> {
         private long time;
         private String id;
@@ -43,7 +41,7 @@ class Payment {
         }
 
         @Override
-        public int compareTo(Transaction o) {
+        public int compareTo(Payment.Transaction o) {
             if(this.getTime()>o.getTime())
                 return -1;
             else if(this.getTime()<o.getTime())
@@ -51,12 +49,84 @@ class Payment {
             else
                 return 0;
         }
+    }
+    
+    public static class MyQueue<E>  {
+        private java.util.LinkedList<E> list = new java.util.LinkedList<>();
 
+        public MyQueue(ArrayList e){
+            this.list=new LinkedList<E>(e);
+        }
+
+
+        public MyQueue(E[] e){
+            this.list=new LinkedList<E>(Arrays.asList(e));
+        }
+
+        public MyQueue(){
+            this.list=new LinkedList<E>();
+        }
+
+        public void enqueue(E e){
+            list.addLast(e);
+        }
+
+        public void enqueue(ArrayList e){
+            list.addLast((E) e);
+        }
+
+
+        public E dequeue(){
+            return list.removeFirst();
+        }
+
+        public E getElement(int i){
+            return list.get(i);
+        }
+
+        public E peek(){
+            return list.peek();
+        }
+
+        public int size(){
+            return list.size();
+        }
+
+        public E get(int i){
+            return list.get(i);
+        }
+
+        public boolean contains(E e){
+            return list.contains(e);
+        }
+
+        public boolean isEmpty(){
+            return list.isEmpty();
+        }
+
+        public E poll(){
+            E element = list.peek();
+            list.removeFirst();
+            return element;
+        }
+
+        public void set(int i, E element){
+            list.set(i, element);
+        }
+
+        public void clear(){
+            list.clear();
+        }
+        public void toPrintQueue(){
+            for(int i=0;i< list.size();i++) {
+                System.out.println((i+1)+" "+list.get(i));
+            }
+        }
     }
     
     public static void main(String[] args) {
         LinkedList<String>queue = new LinkedList<>();
-        ArrayList<Transaction>input = new ArrayList<>();
+        ArrayList<Payment.Transaction>input = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         String word = sc.nextLine();
         while((word.equalsIgnoreCase("END"))||(word.equalsIgnoreCase("CLEAR"))) {
@@ -68,7 +138,7 @@ class Payment {
         }
         String[] element = word.split(" ");
         long time = Long.parseLong(element[0]);
-        Transaction t = new Transaction(time, element[1], element[2]);
+        Payment.Transaction t = new Transaction(time, element[1], element[2]);
         input.add(t);
         long startnum = ((time % 10000) / 1000);
         while(true) {
@@ -86,7 +156,7 @@ class Payment {
                     System.exit(0);
                 }
                 time = Long.parseLong(element[0]);
-                Transaction t1 = new Transaction(time, element[1], element[2]);
+                Payment.Transaction t1 = new Payment.Transaction(time, element[1], element[2]);
                 input.add(t1);
 
                 long number = ((time % 10000) / 1000);
@@ -128,7 +198,7 @@ class Payment {
 
     public static void setTimeBasedOnTier(ArrayList list){
         for(int i=0;i< list.size();i++){
-            Transaction temp = (Transaction) list.get(i);
+            Payment.Transaction temp = (Payment.Transaction) list.get(i);
             if(temp.getTier().equalsIgnoreCase("BRONZE")){
                 long change =temp.getTime()+0;
                 temp.setTime(change);
