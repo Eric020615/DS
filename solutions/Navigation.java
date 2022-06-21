@@ -245,7 +245,7 @@ public class Navigation {
         int queries = Integer.valueOf(scanner.nextLine());
         String[]list=new String[queries];
         for (int z = 0; z < queries; z++) {
-            String[]query = scanner.nextLine();
+            String query = scanner.nextLine();
             list[z]=query;
         }
         
