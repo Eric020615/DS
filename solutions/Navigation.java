@@ -260,5 +260,6 @@ public class Navigation {
         } catch (NullPointerException e) {
             System.out.println("Sorry, the source or destination are not exists. ");
         }
+        System.out.println();
     }
 }
