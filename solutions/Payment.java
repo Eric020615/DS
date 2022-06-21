@@ -192,6 +192,7 @@ public class Payment {
             System.out.print(e+" ");
             i++;
         }
+        System.out.println();
     }
 
     public static void setTimeBasedOnTier(ArrayList list){
