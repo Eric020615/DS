@@ -1,6 +1,5 @@
-package solutions;
 import java.util.*;
-public class Payment {
+class Payment {
     
     public static class Transaction implements Comparable<Transaction> {
         private long time;
