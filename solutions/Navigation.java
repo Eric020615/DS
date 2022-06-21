@@ -165,6 +165,7 @@ public class Navigation {
                 else
                     System.out.print(getVertex(path.get(i))+" -> ");
             }
+            System.out.println();
         }
 
         /** A queue to maintain queue of vertices whose
