@@ -5,7 +5,7 @@ public class Payment {
         ArrayList<Payment.Transaction>input = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int num = Integer.valueOf(sc.nextLine());
-        for(int i=0;i<num;i++){
+        for(int count=0;count<num;count++){
             String word = sc.nextLine();
             while((word.equalsIgnoreCase("END"))||(word.equalsIgnoreCase("CLEAR"))) {
                 if (word.equalsIgnoreCase("END")) {
