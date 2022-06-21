@@ -252,6 +252,7 @@ public class Navigation {
             String to = query[1];
             findShortestPath(obj, place, from, to);
         }
+        }
         
     }
     /** Find the shortest path for the given source and destination */
