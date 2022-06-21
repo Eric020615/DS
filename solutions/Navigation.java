@@ -10,15 +10,15 @@ import java.util.Scanner;
 public class Navigation {
     //main method
     public static void main(String[] args) throws IOException {
-        Scanner scr = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         HashMap<String, Integer> place = new HashMap<String, Integer>();
         UnweightedGraph<String> obj = new UnweightedGraph(); // create a graph
         ArrayList<String> destination = new ArrayList<>();
        
         String word;
-        int num = Integer.valueOf(scr.nextLine());
+        int num = Integer.valueOf(scanner.nextLine());
         for(int i=0;i<num;i++){
-            int num_connection = Integer.parseInt(scr.nextLine());
+            int num_connection = Integer.parseInt(scanner.nextLine());
             System.out.print("The number of connection in this case: " + num_connection);
             for(int j=0;j<num_connection;j++){
                 String[] stations = scanner.nextLine().split(" => ");
