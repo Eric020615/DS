@@ -225,7 +225,7 @@ public class Navigation {
         ArrayList<String> destination = new ArrayList<>();
         int index = 0;
         String word;
-        int num_connection = Integer.parseInt(scanner.nextLine());
+        int num_connection = Integer.valueOf(scanner.nextLine());
         for(int j=0;j<num_connection;j++){
                 String[] stations = scanner.nextLine().split(" => ");
                 obj.addVertex(stations[0]);
@@ -243,10 +243,16 @@ public class Navigation {
         }
 
         int queries = Integer.valueOf(scanner.nextLine());
+        String[]list=new String[queries];
         for (int z = 0; z < queries; z++) {
-            String[] query = scanner.nextLine().split(" -> ");
-            String from = query[0];
-            String to = query[1];
+            String[]query = scanner.nextLine();
+            list[z]=query;
+        }
+        
+        for(int o=0;o<list;o++){
+            String[]test=list[o].split(" -> ");
+            String from = test[0];
+            String to = test[1];
             findShortestPath(obj, place, from, to);
         }
     }
