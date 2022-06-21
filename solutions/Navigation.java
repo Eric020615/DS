@@ -227,7 +227,7 @@ public class Navigation {
         String word;
         int num_connection = Integer.valueOf(scanner.nextLine());
         for(int j=0;j<num_connection;j++){
-                String input=scanner.nextLine()
+                String input=scanner.nextLine();
                 String[]stations = input.split("=>");
                 obj.addVertex(stations[0]);
                 obj.addVertex(stations[1]);
