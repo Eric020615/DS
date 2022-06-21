@@ -10,7 +10,7 @@ public class Payment {
             while((word.equalsIgnoreCase("END"))||(word.equalsIgnoreCase("CLEAR"))) {
                 if (word.equalsIgnoreCase("END")) {
                     word = sc.nextLine();
-                    System.exit(0);
+                    continue;
                 }else if (word.equalsIgnoreCase("CLEAR")) {
                     sc.nextLine();
                     word = sc.nextLine();
@@ -24,6 +24,7 @@ public class Payment {
             while(true) {
                 if (word.equalsIgnoreCase("END")) {
                     word = sc.nextLine();
+                    continue;
                 }
                 else{
                     word = sc.nextLine();
