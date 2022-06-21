@@ -22,7 +22,7 @@ class Navigation {
         List<List<Edge>> neighbors = new ArrayList<>();
         ArrayList<ArrayList<Integer>> adjList;
 
-        public UnweightedGraph() {
+        public Graph() {
         }
 
         public int getSize() {
