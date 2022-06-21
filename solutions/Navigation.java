@@ -35,6 +35,7 @@ public class Navigation {
                 obj.addEdge(place.get(place_name1), place.get(place_name2));
                     //obj.addEdge(stations[1], stations[0]);
            }
+        }
       int queries = Integer.valueOf(scanner.nextLine());
       for (int z = 0; z < queries; z++) {
            String[] query = scanner.nextLine().split(" -> ");
@@ -42,7 +43,7 @@ public class Navigation {
            String to = query[1];
            findShortestPath(obj, place, from, to);
      }
-}
+    }
     /** Find the shortest path for the given source and destination */
     public static void findShortestPath(UnweightedGraph<String> graph, HashMap<String, Integer> places, String source, String destination) {
         System.out.print("\nThe source : " + source);
