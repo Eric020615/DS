@@ -161,7 +161,6 @@ public class Payment {
 
                 long number = ((time % 10000) / 1000);
                 if(startnum!=number) {
-                    System.out.println("Arrange based on tier system :");
                     setTimeBasedOnTier(input);
                     Collections.sort(input);
                     printTrans(input);
@@ -169,7 +168,6 @@ public class Payment {
                         queue.add(input.get(i).getId());
                     }
                     input.clear();
-                    System.out.print("Output:");
                     for (int i=0;i<100;i++) {
                         System.out.println(queue.removeFirst());
                     }
