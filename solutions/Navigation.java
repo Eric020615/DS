@@ -243,7 +243,7 @@ public class Navigation {
                     }
                     obj.addEdge(place.get(place_name1), place.get(place_name2));
             }
-            scanner.nextLine();
+            String a = scanner.nextLine();
             int queries = Integer.valueOf(scanner.nextLine());
             for (int z = 0; z < queries; z++) {
                 String[]query = scanner.nextLine().split(" -> ");;
