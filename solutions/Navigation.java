@@ -225,10 +225,12 @@ public class Navigation {
         ArrayList<String> destination = new ArrayList<>();
         int index = 0;
         String word;
+        int num = Integer.valueOf(scanner.nextLine());
+        for(int m=0;m<num;m++){
         int num_connection = Integer.valueOf(scanner.nextLine());
         for(int j=0;j<num_connection;j++){
                 String input=scanner.nextLine();
-                String[]stations = input.split("=>");
+                String[]stations = input.split(" => ");
                 obj.addVertex(stations[0]);
                 obj.addVertex(stations[1]);
                 String place_name1 = stations[0];  //source
@@ -255,6 +257,7 @@ public class Navigation {
             String from = test[0];
             String to = test[1];
             findShortestPath(obj, place, from, to);
+        }
         }
     }
     /** Find the shortest path for the given source and destination */
