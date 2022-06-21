@@ -227,31 +227,30 @@ public class Navigation {
         String word;
         int num = Integer.valueOf(scanner.nextLine());
         for(int m=0;m<num;m++){
-        int num_connection = Integer.valueOf(scanner.nextLine());
-        for(int j=0;j<num_connection;j++){
-                String input=scanner.nextLine();
-                String[]stations = input.split(" => ");
-                obj.addVertex(stations[0]);
-                obj.addVertex(stations[1]);
-                String place_name1 = stations[0];  //source
-                String place_name2 = stations[1];  //destination
-                if (!place.containsKey(place_name1)) {
-                    place.put(place_name1, index++);
-                }
-                if (!place.containsKey(place_name2)) {
-                    place.put(place_name2, index++);
-                }
-                obj.addEdge(place.get(place_name1), place.get(place_name2));
-                //obj.addEdge(stations[1], stations[0]);
-        }
+            int num_connection = Integer.valueOf(scanner.nextLine());
+            for(int j=0;j<num_connection;j++){
+                 String input=scanner.nextLine();
+                 String[]stations = input.split(" => ");
+                 obj.addVertex(stations[0]);
+                 obj.addVertex(stations[1]);
+                 String place_name1 = stations[0];  //source
+                    String place_name2 = stations[1];  //destination
+                    if (!place.containsKey(place_name1)) {
+                        place.put(place_name1, index++);
+                    }
+                    if (!place.containsKey(place_name2)) {
+                        place.put(place_name2, index++);
+                    }
+                    obj.addEdge(place.get(place_name1), place.get(place_name2));
+            }
 
-        int queries = Integer.valueOf(scanner.nextLine());
-        for (int z = 0; z < queries; z++) {
-            String[]query = scanner.nextLine().split(" -> ");;
-            String from = query[0];
-            String to = query[1];
-            findShortestPath(obj, place, from, to);
-        }
+            int queries = Integer.valueOf(scanner.nextLine());
+            for (int z = 0; z < queries; z++) {
+                String[]query = scanner.nextLine().split(" -> ");;
+                String from = query[0];
+                String to = query[1];
+                findShortestPath(obj, place, from, to);
+            }
         }
         
     }
