@@ -17,7 +17,7 @@ class Navigation {
     }
     
     
-    public static class UnweightedGraph<V> {
+    public static class Graph<V> {
         List<V> vertices = new ArrayList<>();
         List<List<Edge>> neighbors = new ArrayList<>();
         ArrayList<ArrayList<Integer>> adjList;
@@ -201,6 +201,7 @@ class Navigation {
     
     
     //main method
+    /*
     public static void main(String[] args) throws IOException {
         HashMap<String,Integer> place = new HashMap<String , Integer>();
         UnweightedGraph<String> obj = new UnweightedGraph();
@@ -266,5 +267,27 @@ class Navigation {
         catch (NullPointerException e) {
             System.out.println("Sorry, the source or destination are not exists. ");
         }
+    }*/
+    public static void main(String[] args) {         
+        Scanner scanner = new Scanner(System.in);         /*          * Number of the test cases          */         
+        int num = Integer.valueOf(scanner.nextLine());         
+        for (int i = 0; i < num; i++) {             /*              * Number of the connection in this graph              */             
+            int numberOfConnections = Integer.valueOf(scanner.nextLine());             
+            Graph<String>graph = new Graph<>();             
+            for (int j = 0; j < numberOfConnections; j++) {                 
+                String[] stations = scanner.nextLine().split(" => ");                
+                graph.addVertex(stations[0]);                 
+                graph.addVertex(stations[1]);                 
+                graph.addEdge(stations[0], stations[1]);                 
+                graph.addEdge(stations[1], stations[0]);                         /*              * The number of queries from user              */             
+            int queries = Integer.valueOf(scanner.nextLine());             
+            for (int z = 0; z < queries; z++) {                 
+                String[] query = scanner.nextLine().split(" -> ");                 
+                String from = query[0];                 
+                String to = query[1];                 
+                //graph.bfs(from, to);             
+            }         
+        }     
+    }
     }
 }
