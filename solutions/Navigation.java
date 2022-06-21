@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Navigation {
     //main method
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, Integer> place = new HashMap<String, Integer>();
         UnweightedGraph<String> obj = new UnweightedGraph(); // create a graph
