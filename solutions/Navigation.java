@@ -249,7 +249,7 @@ public class Navigation {
             list[z]=query;
         }
         
-        for(int o=0;o<list;o++){
+        for(int o=0;o<list.length;o++){
             String[]test=list[o].split(" -> ");
             String from = test[0];
             String to = test[1];
