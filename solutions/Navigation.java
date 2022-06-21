@@ -1,5 +1,3 @@
-package navigation;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Navigation {
+class Navigation {
     public static class Edge  {
         public int  u;
         public int  v;
