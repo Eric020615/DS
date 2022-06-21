@@ -14,7 +14,7 @@ public class Navigation {
         HashMap<String, Integer> place = new HashMap<String, Integer>();
         UnweightedGraph<String> obj = new UnweightedGraph(); // create a graph
         ArrayList<String> destination = new ArrayList<>();
-       
+        int index = 0;
         String word;
         int num = Integer.valueOf(scanner.nextLine());
         for(int i=0;i<num;i++){
