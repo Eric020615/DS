@@ -12,9 +12,9 @@ public class Payment {
                 word = sc.nextLine();
             }
         }
-        String[] element = word.split(" ");
+        String[]element = word.split(" ");
         long time = Long.parseLong(element[0]);
-        Payment.Transaction t = new Payment.Transaction(time, element[1], element[2]);
+        Payment.Transaction t = new Payment.Transaction(time, element[0], element[0]);
         input.add(t);
         long startnum = ((time % 10000) / 1000);
         while(true) {
