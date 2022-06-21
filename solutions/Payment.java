@@ -4,51 +4,57 @@ public class Payment {
         LinkedList<String>queue = new LinkedList<>();
         ArrayList<Payment.Transaction>input = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        String word = sc.nextLine();
-        while((word.equalsIgnoreCase("END"))||(word.equalsIgnoreCase("CLEAR"))) {
-            if (word.equalsIgnoreCase("END")) {
-                System.exit(0);
-            }else if (word.equalsIgnoreCase("CLEAR")) {
-                word = sc.nextLine();
-            }
-        }
-        String[]element = word.split(" ");
-        long time = Long.parseLong(element[0]);
-        Payment.Transaction t = new Payment.Transaction(time, element[0], element[0]);
-        input.add(t);
-        long startnum = ((time % 10000) / 1000);
-        while(true) {
-            if (word.equalsIgnoreCase("END")) {
-                System.exit(0);
-            }
-            else{
-                word = sc.nextLine();
-                if (word.equalsIgnoreCase("CLEAR")) {
-                    queue.clear();
-                    continue;
+        int num = Integer.valueOf(sc.nextLine());
+        for(int i=0;i<num;i++){
+            String word = sc.nextLine();
+            while((word.equalsIgnoreCase("END"))||(word.equalsIgnoreCase("CLEAR"))) {
+                if (word.equalsIgnoreCase("END")) {
+                    System.exit(0);
+                }else if (word.equalsIgnoreCase("CLEAR")) {
+                    sc.nextLine();
+                    word = sc.nextLine();
                 }
-                element = word.split(" ");
+            }
+            String[]element = word.split(" ");
+            long time = Long.parseLong(element[0]);
+            Payment.Transaction t = new Payment.Transaction(time, element[1], element[2]);
+            input.add(t);
+            long startnum = ((time % 10000) / 1000);
+            while(true) {
                 if (word.equalsIgnoreCase("END")) {
                     System.exit(0);
                 }
-                time = Long.parseLong(element[0]);
-                Payment.Transaction t1 = new Payment.Transaction(time, element[1], element[2]);
-                input.add(t1);
+                else{
+                    word = sc.nextLine();
+                    if (word.equalsIgnoreCase("CLEAR")) {
+                        queue.clear();
+                        sc.nextLine();
+                        word = sc.nextLine();
+                        continue;
+                    }
+                    element = word.split(" ");
+                    if (word.equalsIgnoreCase("END")) {
+                        System.exit(0);
+                    }
+                    time = Long.parseLong(element[0]);
+                    Payment.Transaction t1 = new Payment.Transaction(time, element[1], element[2]);
+                    input.add(t1);
 
-                long number = ((time % 10000) / 1000);
-                if(startnum!=number) {
-                    setTimeBasedOnTier(input);
-                    Collections.sort(input);
-                    printTrans(input);
-                    for (int i=0;i<input.size();i++){
-                        queue.add(input.get(i).getId());
+                    long number = ((time % 10000) / 1000);
+                    if(startnum!=number) {
+                        setTimeBasedOnTier(input);
+                        Collections.sort(input);
+                        printTrans(input);
+                        for (int i=0;i<input.size();i++){
+                            queue.add(input.get(i).getId());
+                        }
+                        input.clear();
+                        for (int i=0;i<100;i++) {
+                            System.out.println(queue.removeFirst());
+                        }
                     }
-                    input.clear();
-                    for (int i=0;i<100;i++) {
-                        System.out.println(queue.removeFirst());
-                    }
+                    startnum = number;
                 }
-                startnum = number;
             }
         }
     }
