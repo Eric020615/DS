@@ -9,6 +9,7 @@ public class Payment {
             String word = sc.nextLine();
             while((word.equalsIgnoreCase("END"))||(word.equalsIgnoreCase("CLEAR"))) {
                 if (word.equalsIgnoreCase("END")) {
+                    word = sc.nextLine();
                     System.exit(0);
                 }else if (word.equalsIgnoreCase("CLEAR")) {
                     sc.nextLine();
@@ -22,7 +23,7 @@ public class Payment {
             long startnum = ((time % 10000) / 1000);
             while(true) {
                 if (word.equalsIgnoreCase("END")) {
-                    System.exit(0);
+                    word = sc.nextLine();
                 }
                 else{
                     word = sc.nextLine();
@@ -34,7 +35,7 @@ public class Payment {
                     }
                     element = word.split(" ");
                     if (word.equalsIgnoreCase("END")) {
-                        System.exit(0);
+                        word = sc.nextLine();
                     }
                     time = Long.parseLong(element[0]);
                     Payment.Transaction t1 = new Payment.Transaction(time, element[1], element[2]);
