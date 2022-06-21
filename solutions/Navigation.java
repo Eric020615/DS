@@ -246,19 +246,13 @@ public class Navigation {
         }
 
         int queries = Integer.valueOf(scanner.nextLine());
-        String[]list=new String[queries];
         for (int z = 0; z < queries; z++) {
-            String query = scanner.nextLine();
-            list[z]=query;
-        }
-        
-        for(int o=0;o<list.length;o++){
-            String[]test=list[o].split(" -> ");
-            String from = test[0];
-            String to = test[1];
+            String[]query = scanner.nextLine().split(" -> ");;
+            String from = query[0];
+            String to = query[1];
             findShortestPath(obj, place, from, to);
         }
-        }
+        
     }
     /** Find the shortest path for the given source and destination */
     public static void findShortestPath(UnweightedGraph<String> graph, HashMap<String, Integer> places, String source, String destination) {
