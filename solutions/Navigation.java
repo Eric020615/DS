@@ -234,16 +234,16 @@ public class Navigation {
                  obj.addVertex(stations[0]);
                  obj.addVertex(stations[1]);
                  String place_name1 = stations[0];  //source
-                    String place_name2 = stations[1];  //destination
-                    if (!place.containsKey(place_name1)) {
-                        place.put(place_name1, index++);
-                    }
-                    if (!place.containsKey(place_name2)) {
-                        place.put(place_name2, index++);
-                    }
-                    obj.addEdge(place.get(place_name1), place.get(place_name2));
+                 String place_name2 = stations[1];  //destination
+                 if (!place.containsKey(place_name1)) {
+                     place.put(place_name1, index++);
+                 }
+                 if (!place.containsKey(place_name2)) {
+                     place.put(place_name2, index++);
+                 }
+                 obj.addEdge(place.get(place_name1), place.get(place_name2));
             }
-            String a = scanner.nextLine();
+            scanner.nextLine();
             int queries = Integer.valueOf(scanner.nextLine());
             for (int z = 0; z < queries; z++) {
                 String[]query = scanner.nextLine().split(" -> ");;
