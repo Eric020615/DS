@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Histogram {
     public static class MergeSort {
 
+        /** The no-argument constructor with an empty body */
         public MergeSort() {
         }
 
@@ -28,7 +29,7 @@ public class Histogram {
             }
         }
 
-        /** Merge two sorted lists */
+        /** The method to merge two sorted lists */
         public void merge(int[] list1, int[] list2, int[] temp) {
             int current1 = 0; // Current index in list1
             int current2 = 0; // Current index in list2
@@ -52,30 +53,45 @@ public class Histogram {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        // Create an object ms to invoke the MergeSort class
         Histogram.MergeSort ms=new Histogram.MergeSort();
         //Number of test case for the testing
         int t = scanner.nextInt();
+        // Start for to loop through every test case
         for (int i = 0; i < t; i++) {
+            // Store the first line of int type in a variable N
             int N = scanner.nextInt();
+            // Store the first line of int type in a variable M
             int M = scanner.nextInt();
+            // N represents the number of data points
+            // M represents the number of bins
+            // Create an array data of int type to store the data points
             int[] data = new int[N];
+            // Start for to store every data point in the array data
             for (int j = 0; j < N; j++) {
                 data[j] = scanner.nextInt();
             }
+            //Invoke the mergeSort method in the MergeSort class to sort and arrange the data points in ascending order
             ms.mergeSort(data);
-
+            // The formula to calculate the width of an interval
+            // Store the value of calculation in a variable width of int type
             int width = (data[N - 1] - data[0]) / M;
+            // Create an array interval of int type to store the cutoffs for the histogram
             int[] interval = new int[M + 1];
             interval[0] = data[0];
+            // Start for to calculate and store the cutoffs of every interval
             for (int q = 1; q < interval.length; q++) {
                 interval[q] = interval[q - 1] + width;
             }
+            // Start for to calculate and store the cutoffs of every interval
             for (int w = 0; w < interval.length; w++) {
                 System.out.print(interval[w] + " ");
             }
             System.out.println();
             int[] count = new int[M];
+            // Start for to calculate the counts for each interval
             for (int l = 0; l < M; l++) {
+                // Start for to loop through every data point in a particular interval
                 for (int j = 0; j < data.length; j++) {
                     if (l == M - 1) {
                         if (data[j] >= interval[l] && data[j] <= interval[l + 1]) {
@@ -88,6 +104,7 @@ public class Histogram {
                     }
                 }
             }
+            // Start for to print out the counts for each interval
             for (int p = 0; p < count.length; p++) {
                 System.out.print(count[p] + " ");
             }
